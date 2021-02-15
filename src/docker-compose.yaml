@@ -1,0 +1,12 @@
+version: '3'
+services:
+  hologram:
+    build: ./
+    container_name: hologram_interface
+    ports:
+      - 3001:3001
+    networks:
+      - dejavu_db_network
+
+networks:
+  dejavu_db_network:

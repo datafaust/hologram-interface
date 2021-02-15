@@ -1,0 +1,104 @@
+
+@media only screen and (max-width: 900px) {
+
+@keyframes animatedBackground {
+    from {
+        background-position: 0 0;
+    }
+    to {
+        background-position: 100% 0;
+        }
+    }
+.container {
+    flex:1;
+    background-image: url("./assets/pics/wallpaper.jpg");
+    position: relative;
+    height:100%;
+    width: 100%;
+    background-position: 0px 0px;
+    background-repeat: repeat-x;
+    animation: animatedBackground 10s linear infinite;
+    background-size: 600px 450px;
+}
+
+.brandContainer{
+    color: white;
+    font-family: 'broadway';
+    padding:5px;
+}
+
+.brandMain {
+    display:flex;
+    text-align: center;
+    align-items: center;
+    font-size: 30px;
+    margin-left: 20%;
+    font-style: italic;
+}
+
+.brandSub {
+    color:white;
+    text-align: center;
+    align-items: center;
+    font-family: 'broadway';
+    font-size: 20px;
+    font-style: italic;
+    margin-top: -3%;
+}
+
+.title {
+    color: white;
+    text-align: center;
+    font-family: 'blade';
+}
+
+.choiceContainer {
+    display: flex;
+    justify-content: space-between;
+    margin-top: -5%;
+}
+
+.choice {
+    border-radius:10%;
+    width: 30%;
+    margin: 30px auto;
+    /* background: #b29700; */
+    box-shadow: 10px 4px 10px black;
+    display:block;
+}
+
+.choiceImg {
+    margin-left: 15%;
+    padding: 5px;
+}
+
+.choiceText {
+    text-align: center;
+    font-family: 'broadway';
+    color: black;
+    font-size: 1.2em;
+}
+
+@font-face {
+    font-family: 'blade';
+    font-weight: normal;
+    font-style: normal;
+    src: url('./assets/fonts/BLADRMF_.ttf') format('truetype'); 
+  }
+
+@font-face {
+    font-family: 'broadway';
+    font-weight: normal;
+    font-style: normal;
+    src: url('./assets/fonts/BroadwayD.ttf') format('truetype'); 
+  }
+  
+  @font-face {
+    font-family: 'hein';
+    font-weight: bold;
+    font-style: bold;
+    src: url('./assets/fonts/copyfonts.com_heinlein.ttf') format('truetype'); 
+  }
+
+  
+}
