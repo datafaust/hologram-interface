@@ -1,0 +1,32 @@
+{
+    'total_time': 0.3262672424316406, 
+    'fingerprint_time': 0.16405439376831055, 
+    'query_time': 0.11218500137329102, 
+    'align_time': 0.04958486557006836, 
+    'results': [
+        {
+            'song_id': 6, 
+            'song_name': b'Bee-Gees--Staying-Alive', 
+            'input_total_hashes': 322, 
+            'fingerprinted_hashes_in_db': 128429, 
+            'hashes_matched_in_input': 21, 
+            'input_confidence': 0.07, 
+            'fingerprinted_confidence': 0.0, 
+            'offset': 964, 
+            'offset_seconds': 44.76807, 
+            'file_sha1': b'1FDDFE7B676DC6F51CDAD88A7586E80C62ACE44D'
+        }, 
+        {
+            'song_id': 3, 
+            'song_name': b'The-Lights-Galaxia--While-She-Sleeps', 
+            'input_total_hashes': 322, 
+            'fingerprinted_hashes_in_db': 34931, 
+            'hashes_matched_in_input': 30, 
+            'input_confidence': 0.09, 
+            'fingerprinted_confidence': 0.0, 
+            'offset': 2544, 
+            'offset_seconds': 118.14313, 
+            'file_sha1': b'355223EBF3EE43EED0F45ECA688FAAD186FC3167'
+        }
+            ]
+}

@@ -7,7 +7,8 @@ import search from './assets/pics/nuclearCowboy.png'
 import Processing from './Processing';
 
 
-const api = "songapi:5000/recognize"
+//const api = "http://192.168.0.128:5000"
+const api = "songapi:5000"
 
 const App = () => {
 
@@ -25,15 +26,16 @@ const App = () => {
     let response = await fetch(`${api}/recognize`)
       .then(res => res.json())
       .then(res => {
-        console.log(res["videos"][0])
-        return res["videos"][0]["url_suffix"]
+        console.log(res)
+        console.log(res.text)
+        //console.log(res["videos"][0])
+        return res.text
       })
       .catch((error) => {
         console.log(error)
       });
 
     if(response) {
-      console.log(response)
       setsongColor("#b29700")
       //setLoading(false)
     } 
