@@ -1,12 +1,36 @@
-version: '3'
+# version: '3'
+# services:
+#   hologram:
+#     build: ./
+#     container_name: hologram_interface
+#     ports:
+#       - 3001:3000
+#     networks:
+#       - db_network
+#     environment:
+#       - CHOKIDAR_USEPOLLING=true
+
+# networks:
+#   db_network:
+
+
+version: '3.7'
+
 services:
   hologram:
     build: ./
     container_name: hologram_interface
+    volumes:
+      - '.:/app'
+      - '/app/node_modules'
     ports:
-      - 3001:3001
-    networks:
-      - db_network
+      - 3001:3000
+    environment:
+      - CHOKIDAR_USEPOLLING=true
 
 networks:
-  db_network:
+  default:
+    external:
+      name: db_network
+
+
