@@ -21,9 +21,9 @@ services:
     build: ./
     container_name: hologram_interface
     restart: always
-    volumes:
-      - '.:/app'
-      - '/app/node_modules'
+    # volumes:
+    #   - '.:/app'
+    #   - '/app/node_modules'
     ports:
       - 3001:3000
     environment:
