@@ -6,7 +6,7 @@ services:
     ports:
       - 3001:3001
     networks:
-      - dejavu_db_network
+      - db_network
 
 networks:
-  dejavu_db_network:
+  db_network:
