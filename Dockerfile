@@ -52,6 +52,8 @@ RUN npm update
 RUN npm install @babel/helper-compilation-targets --save-dev
 RUN npm install react-scripts@3.4.1 -g --silent
 
+USER node
+
 # add app
 COPY . ./
 
