@@ -58,4 +58,4 @@ USER node
 COPY . ./
 
 # start app
-CMD ["npm", "run", "start"]
+CMD ["npm", "start"]
