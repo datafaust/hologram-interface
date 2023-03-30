@@ -48,6 +48,8 @@ ENV PATH /app/node_modules/.bin:$PATH
 COPY package.json ./
 COPY package-lock.json ./
 RUN npm install --silent
+# below is the change to make rpi work with node now root issue permissions with node modules direc
+RUN mkdir node_modules/.cache && chmod -R 777 node_modules/.cache 
 RUN npm update
 RUN npm install @babel/helper-compilation-targets --save-dev
 RUN npm install react-scripts@3.4.1 -g --silent
