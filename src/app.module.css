@@ -9,6 +9,13 @@
         background-position: 100% 0;
         }
     }
+
+.name {
+    color: white;
+    text-align: center;
+    font-weight: bold;
+}
+
 .container {
     flex:1;
     background-image: url("./assets/pics/wallpaper.jpg");
@@ -76,7 +83,8 @@
     text-align: center;
     font-family: 'broadway';
     color: black;
-    font-size: 1.2em;
+    font-size: 1.4em;
+    padding-bottom: 1rem;
 }
 
 @font-face {

@@ -20,6 +20,7 @@ services:
   hologram:
     build: ./
     container_name: hologram_interface
+    restart: always
     volumes:
       - '.:/app'
       - '/app/node_modules'

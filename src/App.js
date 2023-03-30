@@ -7,8 +7,8 @@ import search from './assets/pics/nuclearCowboy.png'
 import Processing from './Processing';
 
 
-//const api = "http://192.168.0.128:5000"
-const api = "songapi:5000"
+const api = "http://192.168.0.128:5000"
+//const api = "songapi:5000"
 
 const App = () => {
 
@@ -16,6 +16,7 @@ const App = () => {
   const [songColor, setsongColor] = useState("#b29700");
   const [genreColor, setgenreColor] = useState("#b29700");
   const [loading, setLoading] = useState(false)
+  const [name, setName] = useState([])
 
 
   const getSong = async () => {
@@ -29,6 +30,7 @@ const App = () => {
         console.log(res)
         console.log(res.text)
         //console.log(res["videos"][0])
+        setName(res.text)
         return res.text
       })
       .catch((error) => {
@@ -91,6 +93,8 @@ const App = () => {
           
         </div>
 
+           {name ? <div className={classes.name}>{name}</div> : <div></div>}
+          
         </div> 
       
     </div>
