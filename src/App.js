@@ -7,7 +7,7 @@ import search from './assets/pics/nuclearCowboy.png'
 import Processing from './Processing';
 
 
-const api = "http://192.168.0.20:5000"
+const api = "songapi:5000/recognize"
 
 const App = () => {
 
@@ -62,19 +62,14 @@ const App = () => {
 
 
   return (
-    <div 
-    className={classes.container}
-      //id="animate-area"
-    >
-      {
-        !loading ?
+    <div className={classes.container}>
+  
         <div>
-
         {/** BRAND */}
         <div className={classes.brandContainer}>
           <div className={classes.brandMain}>
             <img src={sun} height={80} width={80} />
-            <p>FAUSTIAN INDUSTRIES</p>
+            <p>FAUSTTEK INDUSTRIES</p>
           </div>
           <p className={classes.brandSub}>For A Brighter Tomorrow</p>
         </div>
@@ -84,12 +79,31 @@ const App = () => {
         <br />
         {/** OPTIONS */}
         {/* <div className={classes.title}>Choose your mode below</div> */}
-        <div className={classes.choiceContainer}>
+        <div 
+        //className={classes.choiceContainer}
+        >
           <div onClick={()=>getSong()} className={classes.choice} style={{backgroundColor: songColor}}>
             <img className={classes.choiceImg} style={{marginTop:'5%'}} src={song} height={180} width={180} />
             <p className={classes.choiceText}>RECOGNIZE SONG</p>
           </div>
-          <div onClick={()=>getGenre()} className={classes.choice} style={{backgroundColor: genreColor }}>
+          
+        </div>
+
+        </div> 
+      
+    </div>
+  );
+};
+
+export default App;
+
+
+
+/**
+ * 
+ * 
+ * 
+ *           <div onClick={()=>getGenre()} className={classes.choice} style={{backgroundColor: genreColor }}>
           <img className={classes.choiceImg} src={genre} height={190} width={150} />
             <p className={classes.choiceText}>RECOGNIZE GENRE</p>
           </div>
@@ -97,15 +111,4 @@ const App = () => {
           <img className={classes.choiceImg} src={search} height={190} width={270} style={{ marginLeft: "-2%"}} />
             <p className={classes.choiceText}>EXPLORE</p>
           </div>
-        </div>
-
-        } </div> : 
-        <Processing 
-        /> 
-      }
-      
-    </div>
-  );
-};
-
-export default App;
+ */
