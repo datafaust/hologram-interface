@@ -7,8 +7,8 @@ import search from './assets/pics/nuclearCowboy.png'
 import Processing from './Processing';
 
 
-//const api = "http://192.168.0.128:5000"
-const api = "songapi:5000"
+const api = "http://192.168.0.128:5000"
+//const api = "songapi:5000"
 
 const App = () => {
 
