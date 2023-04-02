@@ -30,8 +30,8 @@ const App = () => {
         console.log(res)
         console.log(res.text)
         //console.log(res["videos"][0])
-        setName(res.text)
-        return res.text
+        setName(res.song)
+        return res.song
       })
       .catch((error) => {
         console.log(error)
