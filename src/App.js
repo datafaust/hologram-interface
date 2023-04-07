@@ -5,6 +5,8 @@ import genre from './assets/pics/girlPointing.png'
 import song from './assets/pics/guyListening.png'
 import search from './assets/pics/nuclearCowboy.png'
 import Processing from './Processing';
+import hourglass from './assets/pics/hourglass.png';
+import { ToggleSlider }  from "react-toggle-slider";
 
 
 const api = "http://192.168.0.128:5000"
@@ -19,10 +21,11 @@ const App = () => {
   const [name, setName] = useState([])
 
 
+  const timeout = (delay: number) => {
+    return new Promise( res => setTimeout(res, delay) );
+  }
+
   const getSong = async () => {
-    console.log('getting song stuff...')
-    setsongColor("#aec6cf");
-    //setLoading(true)
 
     let response = await fetch(`${api}/recognize`)
       .then(res => res.json())
@@ -37,9 +40,24 @@ const App = () => {
         console.log(error)
       });
 
+      return response
+
+  }
+
+
+
+  const recognize = async () => {
+    console.log('getting song stuff...')
+    setsongColor("#aec6cf");
+    setLoading(true);
+    //await timeout(4000)
+    
+
+    let response = await getSong();
+
     if(response) {
       setsongColor("#b29700")
-      //setLoading(false)
+      setLoading(false)
     } 
   }
 
@@ -86,16 +104,26 @@ const App = () => {
         <div 
         //className={classes.choiceContainer}
         >
-          <div onClick={()=>getSong()} className={classes.choice} style={{backgroundColor: songColor}}>
-            <img className={classes.choiceImg} style={{marginTop:'5%'}} src={song} height={180} width={180} />
-            <p className={classes.choiceText}>RECOGNIZE SONG</p>
+          <div onClick={()=>recognize()} className={classes.choice} style={{backgroundColor: songColor}}>
+            {
+              loading ? <img className={classes.hourglass} style={{marginTop:'5%'}} src={hourglass} height={180} width={220} /> :
+              <img className={classes.choiceImg} style={{marginTop:'5%'}} src={song} height={180} width={180} />
+            }
+            <p className={classes.choiceText}>{ loading ? `SEARCHING ...` : `RECOGNIZE SONG`}</p>
           </div>
           
         </div>
-
            {name ? <div className={classes.name}>{name}</div> : <div></div>}
-          
-        </div> 
+        </div>
+
+        
+            {/* <div  className={classes.toggleText} >Use Phone Microphone</div>
+            <br/>
+            <div className={classes.toggleButton}>
+              <ToggleSlider/>
+            </div> */}
+           
+        
       
     </div>
   );
