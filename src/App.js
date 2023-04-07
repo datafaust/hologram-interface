@@ -6,7 +6,7 @@ import song from './assets/pics/guyListening.png'
 import search from './assets/pics/nuclearCowboy.png'
 import Processing from './Processing';
 import hourglass from './assets/pics/hourglass.png';
-import { ToggleSlider }  from "react-toggle-slider";
+//import { ToggleSlider }  from "react-toggle-slider";
 
 
 const api = "http://192.168.0.128:5000"
